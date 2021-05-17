@@ -32,4 +32,3 @@ then put this line to your config/app.php file in providers array
 then run localhost:8000
 
 Have fun..!!!!!
->>>>>>> master
