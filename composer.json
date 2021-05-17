@@ -1,0 +1,31 @@
+{
+    "name": "kajal-pandya/laravel-site-settings",
+    "description": "By installing this package you don't need to make your custom site settings methods.",
+    "type": "library",
+    "homepage": "https://github.com/kajal98/laravel-site-settings",
+    "authors": [
+        {
+            "name": "Kajal Pandya",
+            "email": "kjlkajal98@gmail.com"
+        }
+    ],
+    "require": {},
+    "repositories": [
+        {
+          "type": "path",
+          "url": "../../packages/*"
+        }
+    ],
+    "autoload": {
+    "psr-4": {
+      "KajalPandya\\LaravelSiteSettings\\": "src"
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "KajalPandya\\LaravelSiteSettings\\LaravelSiteSettingsServiceProvider"
+            ]
+        }
+    }
+  }
+}
