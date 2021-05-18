@@ -10,7 +10,7 @@
         }
     ],
     "require": {
-        "kajal-pandya/laravel-site-settings" : "dev-master"
+        "kajal-pandya/laravel-site-settings" : "dev-main"
     },
     "repositories": [
         {
