@@ -9,7 +9,9 @@
             "email": "kjlkajal98@gmail.com"
         }
     ],
-    "require": {},
+    "require": {
+        "kajal-pandya/laravel-site-settings" : "dev-master"
+    },
     "repositories": [
         {
           "type": "path",
@@ -17,8 +19,9 @@
         }
     ],
     "autoload": {
-    "psr-4": {
-      "KajalPandya\\LaravelSiteSettings\\": "src"
+        "psr-4": {
+          "KajalPandya\\LaravelSiteSettings\\": "src"
+        }
     },
     "extra": {
         "laravel": {
@@ -27,5 +30,4 @@
             ]
         }
     }
-  }
 }
