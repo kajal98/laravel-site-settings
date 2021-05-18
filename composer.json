@@ -21,13 +21,13 @@
     "autoload": {
         "psr-0": {
           "KajalPandya\\LaravelSiteSettings\\": "src"
-        }
-    },
-    "extra": {
-        "laravel": {
-            "providers": [
-                "KajalPandya\\LaravelSiteSettings\\LaravelSiteSettingsServiceProvider"
-            ]
+        },
+        "extra": {
+            "laravel": {
+                "providers": [
+                    "KajalPandya\\LaravelSiteSettings\\LaravelSiteSettingsServiceProvider"
+                ]
+            }
         }
     }
 }
