@@ -1,6 +1,6 @@
 <?php
 
-namespace KajalPandya\CustomAuthMethods;
+namespace KajalPandya\LaravelSiteSettings;
 
 use Illuminate\Support\ServiceProvider;
 
