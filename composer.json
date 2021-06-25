@@ -22,5 +22,12 @@
         "psr-4": {
             "KajalPandya\\LaravelSiteSettings\\": "kajal-pandya/laravel-site-settings/src/providers"
         }
-    }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "KajalPandya\\LaravelSiteSettings\\LaravelSiteSettingsServiceProvider"
+            ]
+        }
+    },
 }
