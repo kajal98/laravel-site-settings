@@ -20,7 +20,7 @@
     ],
     "autoload": {
         "psr-4": {
-          "KajalPandya\\LaravelSiteSettings\\": "src"
+            "KajalPandya\\LaravelSiteSettings\\": "kajal-pandya/laravel-site-settings/src/providers"
         }
     }
 }
