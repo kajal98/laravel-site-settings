@@ -2,6 +2,7 @@
     "name": "kajalpandya/crud",
     "description": "Run command in terminal and make ready made crud for your entity",
     "keywords": ["laravel", "repository", "crud", "adminpanel", "eloquent", "model", "cache"],
+    "license": "MIT",
     "type": "crud",
     "authors": [
         {
