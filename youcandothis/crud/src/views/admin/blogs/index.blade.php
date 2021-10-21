@@ -33,13 +33,13 @@
 							<tr>		
 								<td>
 									@if($blog->image)
-									<img src="{!! $blog->image_url('thumb') !!}" alt="">
+									<img src="{!! $blog->imageUrl('thumb') !!}" alt="">
 									@else
 									<p>No Image</p>
 									@endif
 								</td>
 								<td>{!! title_case($blog->title) !!}</td>
-								<td>{!! $blog->blog_category ? title_case($blog->blog_category->name) : '' !!}</td>							
+								<td>{!! $blog->blogCategory ? title_case($blog->blogCategory->name) : '' !!}</td>							
 								<td>
 									<a href="{!!route('blogs.switch',['id'=>$blog->id])!!}" title="Click here to switch account status">
 										@if($blog->publish)

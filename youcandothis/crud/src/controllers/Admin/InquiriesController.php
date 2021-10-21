@@ -11,30 +11,26 @@ use Mail;
 
 class InquiriesController extends Controller
 {
-  public function index()
-  {
-    $inquiries = Inquiry::orderBy('created_at')->get();
-    return view('admin.inquiries.index',compact('inquiries'));
-  }
-
-  public function show($id)
-  {
-    $inquiry = Inquiry::find($id);
-    return view('admin.inquiries.show',compact('inquiry'));
-  }
-
-  public function destroy($id)
-  {
-    try
+    public function index()
     {
-      $inquiry = Inquiry::find($id);
-      $inquiry->delete();
-      return redirect()->route('inquiry.index')->withSuccess('Deleted successfully');
+        $inquiries = Inquiry::orderBy('created_at')->get();
+        return view('admin.inquiries.index', compact('inquiries'));
     }
-    catch(\Exception $e)
+
+    public function show($id)
     {
-      return redirect()->route('inquiry.index')->withError('Something went wrong, Please try after sometime.');
+        $inquiry = Inquiry::find($id);
+        return view('admin.inquiries.show', compact('inquiry'));
     }
-  }
-  
+
+    public function destroy($id)
+    {
+        try {
+            $inquiry = Inquiry::find($id);
+            $inquiry->delete();
+            return redirect()->route('inquiry.index')->withSuccess('Deleted successfully');
+        } catch (\Exception $e) {
+            return redirect()->route('inquiry.index')->withError('Something went wrong, Please try after sometime.');
+        }
+    }
 }

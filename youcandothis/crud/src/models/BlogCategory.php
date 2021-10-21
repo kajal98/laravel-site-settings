@@ -1,7 +1,10 @@
 <?php
+
 namespace App;
+
 use Illuminate\Database\Eloquent\Model;
 use Cviebrock\EloquentSluggable\Sluggable;
+
 class BlogCategory extends Model
 {
     use Sluggable;
@@ -15,7 +18,9 @@ class BlogCategory extends Model
         ]
         ];
     }
-    public function blogs() {
-        return $this->hasMany('App\Blog','blog_category_id');
+
+    public function blogs()
+    {
+        return $this->hasMany('App\Blog', 'blog_category_id');
     }
 }

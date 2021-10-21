@@ -1,10 +1,12 @@
 <?php
+
 namespace App;
+
 use Illuminate\Database\Eloquent\Model;
 
 class Notification extends Model
 {
-    protected $table='notifications'; 
+    protected $table='notifications';
 
     protected $fillable = [
     'sender_id', 'receiver_id', 'question_id', 'is_read','type'
@@ -12,13 +14,11 @@ class Notification extends Model
 
     public function sender()
     {
-        return $this->belongsTo('App\User','sender_id');
+        return $this->belongsTo('App\User', 'sender_id');
     }
 
     public function receiver()
     {
-        return $this->belongsTo('App\User','receiver_id');
+        return $this->belongsTo('App\User', 'receiver_id');
     }
-
-
 }

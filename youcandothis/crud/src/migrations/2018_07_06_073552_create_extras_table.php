@@ -1,8 +1,8 @@
 <?php
 
+use Illuminate\Database\Migrations\Migration;
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
-use Illuminate\Database\Migrations\Migration;
 
 class CreateExtrasTable extends Migration
 {
@@ -16,6 +16,8 @@ class CreateExtrasTable extends Migration
         Schema::create('extras', function (Blueprint $table) {
             $table->increments('id');
             $table->string('title', 255)->nullable();
+            $table->string('slug')->nullable();
+            $table->text('short_description')->nullable();
             $table->text('description')->nullable();
             $table->string('code', 255)->nullable();
             $table->string('image', 255)->nullable();

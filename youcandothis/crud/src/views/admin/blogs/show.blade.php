@@ -18,7 +18,7 @@
 						<tr>
 							<th scope="col">Title</th><td>{!!$blog->title!!}</td></tr>
 							<tr><th scope="col">Author</th><td>{!!$blog->author!!}</td></tr>
-							<tr><th scope="col">Category</th><td>{!!$blog->blog_category->name!!}</td></tr>
+							<tr><th scope="col">Category</th><td>{!!$blog->blogCategory->name!!}</td></tr>
 							<tr><th scope="col">Description</th><td>{!!$blog->description!!}/td>
 							<tr><th scope="col">Publish</th><td>{!! $blog->publish ? 'Yes' : 'No' !!}
 							<tr><th scope="col">Is Archive ?</th><td>{!! $blog->is_archive ? 'Yes' : 'No' !!}

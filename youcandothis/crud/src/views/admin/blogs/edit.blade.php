@@ -69,7 +69,7 @@
             <div class="col-lg-6 col-md-6 col-sm-6">
                 <div class="clearfix" id="previewDiv">
                     @if($blog->image)
-                        <img src="{!! $blog->image_url('thumb') !!}" id='preview' height="100px" width="100px">
+                        <img src="{!! $blog->imageUrl('thumb') !!}" id='preview' height="100px" width="100px">
                     @else
                         <img src="{!! asset('/images/default.jpg') !!}" id='preview' height="100px" width="100px">
                     @endif

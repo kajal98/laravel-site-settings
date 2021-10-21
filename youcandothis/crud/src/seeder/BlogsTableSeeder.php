@@ -4,16 +4,16 @@ use Illuminate\Database\Seeder;
 
 class BlogsTableSeeder extends Seeder
 {
-    /**
-     * Run the database seeds.
-     *
-     * @return void
-     */
+/**
+* Run the database seeds.
+*
+* @return void
+*/
     public function run()
     {
         DB::table('blogs')->insert([
-        	'blog_category_id' => 1,
-        	'author' => 'ABC',
+            'blog_category_id' => 1,
+            'author' => 'ABC',
             'title' => 'Blog1',
             'slug' => 'blog1',
             'description' => '<p>This is description</p>',

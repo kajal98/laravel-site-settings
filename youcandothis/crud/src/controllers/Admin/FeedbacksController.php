@@ -11,39 +11,34 @@ use Mail;
 
 class FeedbacksController extends Controller
 {
-  public function index()
-  {
-    $feedbacks = Feedback::orderBy('created_at')->get();
-    return view('admin.feedbacks.index',compact('feedbacks'));
-  }
-
-  public function show($id)
-  {
-    $feedback = Feedback::find($id);
-    return view('admin.feedbacks.show',compact('feedback'));
-  }
-
-  public function destroy($id)
-  {
-    try
+    public function index()
     {
-      $feedback = Feedback::find($id);
-      $feedback->delete();
-      return redirect()->route('feedback.index')->withSuccess('Deleted successfully');
+        $feedbacks = Feedback::orderBy('created_at')->get();
+        return view('admin.feedbacks.index', compact('feedbacks'));
     }
-    catch(\Exception $e)
-    {
-      return redirect()->route('feedback.index')->withError('Something went wrong, Please try after sometime.');
-    }
-  }
 
-  public function SwitchStatus($id)
-  {
-    $feedback = Feedback::find($id);
-    $feedback->status = $feedback->status == "1" ? "0" : "1";
-    $feedback->save();
-    return redirect()->route('feedback.index')->withSuccess('Status updated successfully');
-   
-  }
-  
+    public function show($id)
+    {
+        $feedback = Feedback::find($id);
+        return view('admin.feedbacks.show', compact('feedback'));
+    }
+
+    public function destroy($id)
+    {
+        try {
+            $feedback = Feedback::find($id);
+            $feedback->delete();
+            return redirect()->route('feedback.index')->withSuccess('Deleted successfully');
+        } catch (\Exception $e) {
+            return redirect()->route('feedback.index')->withError('Something went wrong, Please try after sometime.');
+        }
+    }
+
+    public function switchStatus($id)
+    {
+        $feedback = Feedback::find($id);
+        $feedback->status = $feedback->status == "1" ? "0" : "1";
+        $feedback->save();
+        return redirect()->route('feedback.index')->withSuccess('Status updated successfully');
+    }
 }

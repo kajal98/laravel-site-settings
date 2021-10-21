@@ -1,6 +1,9 @@
 <?php
+
 namespace Illuminate\Foundation\Console;
+
 namespace Youcandothis\Crud\Src\Commands;
+
 use Illuminate\Console\Command;
 use Illuminate\Support\Str;
 use Illuminate\Console\GeneratorCommand;
@@ -28,7 +31,7 @@ class GenerateCrud extends Command
     
     protected function getArguments()
     {
-        return [            
+        return [
             ['name', InputArgument::REQUIRED, 'The name of the class'],
             ['model_name', InputArgument::OPTIONAL, 'An example argument.'],
         ];
@@ -39,8 +42,6 @@ class GenerateCrud extends Command
         return [
             ['views', 'vi', InputOption::VALUE_NONE, 'Create a views.'],
         ];
-
-
     }
 
     protected function getNameInput()
@@ -77,7 +78,7 @@ class GenerateCrud extends Command
         return $this->qualifyClass(
             $this->getDefaultNamespace(trim($rootNamespace, '\\')).'\\'.$name
         );
-    }    
+    }
 
     protected function createViews()
     {
@@ -92,25 +93,23 @@ class GenerateCrud extends Command
         $layout_content = "<!DOCTYPE html>\n<html lang='en'>\n<head>\n    <meta charset='utf-8'>\n    <meta http-equiv='X-UA-Compatible' content='IE=edge'>\n    <meta name='viewport' content='width=device-width, initial-scale=1'>\n</head>\n<body>\n    <div id='container'>\n        @yield('content')\n    </div>\n</body>\n</html>\n";
         $view_content = "@extends('layouts." . $modelName . "')\n@section('content')\n<div class='app'>\n\n</div>\n@endsection";
 
-            if(!file_exists('resources/views/layouts'))
-                {
-                    mkdir('resources/views/layouts');
-                }
-            file_put_contents($layout_path, $layout_content);
-            $this->info('Layout Created Successfully.');
+        if (!file_exists('resources/views/layouts')) {
+                mkdir('resources/views/layouts');
+        }
+
+        file_put_contents($layout_path, $layout_content);
+        $this->info('Layout Created Successfully.');
 
         if ($this->confirm('Would you like to create a views? [y|N]')) {
-            if(!file_exists('resources/views/' . $modelName . 's'))
-                {
+            if (!file_exists('resources/views/' . $modelName . 's')) {
                     mkdir('resources/views/' . $modelName . 's');
-                }
+            }
             file_put_contents($index_path, $view_content);
             file_put_contents($create_path, $view_content);
             file_put_contents($edit_path, $view_content);
             file_put_contents($show_path, $view_content);
             $this->info('Views Created Successfully.');
         }
-
     }
 
     public function handle()
@@ -119,5 +118,4 @@ class GenerateCrud extends Command
             $this->createViews();
         }
     }
-
 }

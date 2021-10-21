@@ -45,5 +45,4 @@ class CrudServiceProvider extends ServiceProvider
     {
         //$this->commands('Crud\Src\Commands\GenerateCrud');
     }
-
 }
