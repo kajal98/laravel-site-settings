@@ -1,33 +1,30 @@
 {
-    "name": "kajal-pandya/laravel-site-settings",
-    "description": "By installing this package you don't need to make your custom site settings methods.",
-    "type": "library",
-    "homepage": "https://github.com/kajal98/laravel-site-settings",
+    "name": "kajalpandya/crud",
+    "description": "Run command in terminal and make ready made crud for your entity",
+    "keywords": ["laravel", "repository", "crud", "adminpanel", "eloquent", "model", "cache"],
+    "type": "crud",
     "authors": [
         {
-            "name": "Kajal Pandya",
-            "email": "kjlkajal98@gmail.com"
+            "name": "Kajal",
+            "email": "kjlkajal98@gmail.com",
+            "role": "Developer"
         }
     ],
+    "minimum-stability": "stable",
     "require": {
-        "kajal-pandya/laravel-site-settings" : "dev-main"
+        "php": "^7.3|^8.0",
+        "anahkiasen/former": "^4.1.10",
+        "cviebrock/eloquent-sluggable": "^4.6.0",
+        "intervention/image": "2.*",
+        "laravelcollective/html": "^5.7.1",
+        "spatie/laravel-newsletter": "^4.2.2",
+        "unisharp/laravel-filemanager": "^1.9.2",
+        "ckeditor/ckeditor": "^4.16"
     },
-    "repositories": [
-        {
-          "type": "path",
-          "url": "../../packages/*"
-        }
-    ],
     "autoload": {
         "psr-4": {
-            "KajalPandya\\LaravelSiteSettings\\": "kajal-pandya/laravel-site-settings/src/providers"
+            "Youcandothis\\Crud\\": "youcandothis/crud/src/providers",
+            "Youcandothis\\Crud\\Src\\Commands\\": "youcandothis/crud/src/commands"
         }
-    },
-    "extra": {
-        "laravel": {
-            "providers": [
-                "KajalPandya\\LaravelSiteSettings\\LaravelSiteSettingsServiceProvider"
-            ]
-        }
-    },
+    }
 }
